@@ -1,0 +1,17 @@
+# NAVIGATION
+#
+def open_signup():
+	#This removes all the text that was in the text boxes
+	app.hide()
+	signup_txtbox1.clear()
+	signup_txtbox2.clear()
+	signup_txtbox3.clear()
+	signup_txtbox4.clear()
+	signup_txtbox5.clear()
+	signup_window.show()
+#
+def close_signup():
+	#This makes sure that the signup window isnt visible straight away
+	app.show()
+	signup_window.hide()
+#
