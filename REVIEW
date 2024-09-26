@@ -1,0 +1,16 @@
+###############################
+# REVIEW WINDOW               #
+###############################
+review = Window(app, 'Please Write a Review')
+review.hide()
+blanktext = Text(review, text='                                ')
+toptext1 = Text(review, text='  Please Write a Review        ')
+blanktext = Text(review, text='                                ')
+box4 = Box(review, layout='grid')
+#
+box4 = Box(review, width='fill', align='bottom')
+exitbutton = PushButton(box4, text='Exit', command=exit, align='left')
+reviewtextbox = TextBox(review, width='fill', height='fill', multiline=True)
+backbutton = PushButton(box4, text='Back', command=back_button, align='left')
+#
+#
