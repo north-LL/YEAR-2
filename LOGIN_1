@@ -1,0 +1,22 @@
+#
+def login_user():  #### TEST WITH 'or 1 = 1; -- 
+	global user_LoggedIn ## variable needed to know who logged in ##
+	if usertextbox.value == "":
+		info("Error", "You must enter a valid username")
+	elif pwtextbox.value == "":
+		info("Error", "You must enter a password")
+	else:
+		sqlselect= "SELECT * FROM user WHERE username = '"+usertextbox.value+"'"
+		rows = query_database(database_file, sqlselect)
+		if len(rows)== 0:
+			info('Error', 'Error')
+		else:
+			sqlselect= "SELECT * FROM user WHERE userpword = '"+pwtextbox.value+"'"
+			rows = query_database(database_file, sqlselect)
+			if len(rows)== 0:
+				info('Error','Error')
+			else:
+				app.hide()
+				review.show()
+#
+#
