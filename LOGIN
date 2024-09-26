@@ -1,0 +1,25 @@
+#
+#################################
+# LOGIN                         #
+#################################
+app = App(title='Review Central', height=400)
+blanktext = Text(app, text='                                   ')
+toptext = Text(app, text='    Welcome to Review Central     ')
+blanktext = Text(app, text='                                   ')
+box1 = Box(app, layout='grid')
+#
+blanktext = Text(box1, text='      ',grid=[1,0])
+text1 = Text(box1, text='Enter Username:', align='left', grid=[0,0])
+usertextbox = TextBox(box1, hide_text=False, align='left',grid=[2,0], width=25)
+#
+blanktext = Text(box1, text='      ',grid=[1,1])
+text2 = Text(box1, text='Enter Password:', align='left', grid=[0,1])
+pwtextbox = TextBox(box1, hide_text=True, align='left',grid=[2,1], width=25)
+#
+box2 = Box(app, layout='grid')
+loginbutton = PushButton(box2, text='login', command=login_user, grid=[0,0])
+signupbutton = PushButton(box2, text='Sign Up', command=open_signup, grid=[0,1])
+#
+box3 = Box(app, width='fill', align='bottom')
+exitbutton = PushButton(box3, text='Exit', command=exit, align='left')
+#
