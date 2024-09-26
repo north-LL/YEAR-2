@@ -1,0 +1,8 @@
+#
+def back_button():
+	signup_window.hide()
+	review.hide()
+	usertextbox.clear()
+	pwtextbox.clear()
+	app.show()
+#
