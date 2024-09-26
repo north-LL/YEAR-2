@@ -1,0 +1,37 @@
+sql = """
+CREATE TABLE "user" (
+	"userID"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	"username"	TEXT,
+	"userpword"	TEXT,
+	'userfirstname' TEXT,
+	'usersurname' TEXT,
+	'useremail' TEXT
+);
+CREATE TABLE 'reviews' (
+	'reviewID' INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	'reviewtest' TEXT,
+	'userID' INTEGER,
+	FOREIGN KEY(userID) REFERENCES user(userID)
+);
+insert into user (username, userpword, userfirstname, usersurname, useremail) values ('joe', 'joeiscool', 'joe', 'fanshaw', 'joefanshaw@email.com');
+insert into reviews (reviewtest) values ('This place was great ****/*****');
+"""
+#
+# global database name
+#
+database_file = 'reviews.db'
+# Delete the database
+# in case it already exists
+#
+if os.path.exists(database_file):
+  os.remove(database_file)
+#
+# Connect to the database
+#
+conn = sqlite3.connect(database_file)
+# Get a cursor pointing to the database
+cursor = conn.cursor()
+# Create the tables
+cursor.executescript(sql)
+# Commit to save everything
+conn.commit()
