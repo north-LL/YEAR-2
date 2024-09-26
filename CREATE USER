@@ -1,0 +1,25 @@
+def	create_user_validation():
+	#This makes sure that the create user has been validated
+	signup_username = signup_txtbox1.value
+	signup_password = signup_txtbox2.value
+	signup_firstname = signup_txtbox3.value
+	signup_surname = signup_txtbox4.value
+	signup_email = signup_txtbox5.value
+	
+	if signup_username.isalpha() == False:
+		info('Error','Username cannot contain numbers or special characters')
+	elif signup_firstname.isalpha() == False:
+		info('Error','Username cannot contain numbers or special characters')
+	elif signup_surname.isalpha() == False:
+		info('Error','Username cannot contain numbers or special characters')
+	elif '@' not in signup_email:
+		info('Error','Email must contain the @ symbol')
+	else:
+		create_user()
+#
+def create_user():
+	query = 'INSERT INTO user (username, userpword, userfirstname, usersurname, useremail) VALUES (?, ?, ?, ?, ?)'
+	execute_sql(database_file, query, (signup_txtbox1.value, signup_txtbox2.value, signup_txtbox3.value, signup_txtbox4.value, signup_txtbox5.value))
+	info('Sucess','user created')
+	close_signup()
+#
