@@ -1,0 +1,36 @@
+##############################
+# SIGN UP                    #
+##############################
+signup_window=Window(app, title="Sign Up")
+signup_window.hide()
+signup_exit_box = Box(signup_window, width="fill", align="top")
+signup_exit_button = PushButton(signup_exit_box, text="Cancel", align="left", command=close_signup)
+signup_toptxt1 = Text(signup_window, text="                                   ")
+signup_toptxt2 = Text(signup_window, text="      Please Enter Details         ", size=15)
+signup_toptxt3 = Text(signup_window, text="                                   ")
+
+signup_box1 = Box(signup_window, layout="grid")
+
+signup_blanktxt1 = Text(signup_box1, text="            ", grid=[1,0])
+signup_txt1 = Text(signup_box1, text="Enter Username", align="left", grid=[0,0])
+signup_txtbox1 = TextBox(signup_box1, hide_text=False, align="left", grid=[2,0], width=20)
+
+signup_blanktxt2 = Text(signup_box1, text="            ", grid=[1,1])
+signup_txt2 = Text(signup_box1, text="Enter Password", align="left", grid=[0,1])
+signup_txtbox2 = TextBox(signup_box1, hide_text=True, align="left", grid=[2,1], width=20)
+
+signup_blanktxt3 = Text(signup_box1, text="            ", grid=[1,2])
+signup_txt3 = Text(signup_box1, text="Enter First Name", align="left", grid=[0,2])
+signup_txtbox3 = TextBox(signup_box1, hide_text=False, align="left", grid=[2,2], width=20)
+
+signup_blanktxt4 = Text(signup_box1, text="            ", grid=[1,3])
+signup_txt4 = Text(signup_box1, text="Enter Surname", align="left", grid=[0,3])
+signup_txtbox4 = TextBox(signup_box1, hide_text=False, align="left", grid=[2,3], width=20)
+
+signup_blanktxt5 = Text(signup_box1, text="            ", grid=[1,4])
+signup_txt5 = Text(signup_box1, text="Enter Email", align="left", grid=[0,4])
+signup_txtbox5 = TextBox(signup_box1, hide_text=False, align="left", grid=[2,4], width=20)
+
+signup_box2 = Box(signup_window, layout="grid")
+signup_window_button = PushButton(signup_box2, text="Sign Up", command=create_user_validation, grid=[0,0])
+#
