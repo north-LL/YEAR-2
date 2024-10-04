@@ -1,6 +1,7 @@
 #
-def login_user():  #### TEST WITH 'or 1 = 1; -- 
-	global user_LoggedIn ## variable needed to know who logged in ##
+def login_user():  
+	#This procedure finds the username and password from the database
+	global user_LoggedIn #This is a global variable that shows the user has logged in
 	if usertextbox.value == "":
 		info("Error", "You must enter a valid username")
 	elif pwtextbox.value == "":
