@@ -18,6 +18,7 @@ def	create_user_validation():
 		create_user()
 #
 def create_user():
+	#This puts the account details into the database
 	query = 'INSERT INTO user (username, userpword, userfirstname, usersurname, useremail) VALUES (?, ?, ?, ?, ?)'
 	execute_sql(database_file, query, (signup_txtbox1.value, signup_txtbox2.value, signup_txtbox3.value, signup_txtbox4.value, signup_txtbox5.value))
 	info('Sucess','user created')
